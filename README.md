@@ -52,7 +52,9 @@ INPUT_FILES are archived in USED_FILES folder.
 Processing file: example_input_1.csv
 
 
-# Inspect:           date state name  number of impressions CTR percentage
+Inspect:           
+
+date state name  number of impressions CTR percentage
 
 0   01/21/2019   Mandiana                    883          0.38%
 
