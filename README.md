@@ -47,14 +47,7 @@ INPUT_FILES are archived in USED_FILES folder.
 
 # Example output:
 
-~/csv-report-processing$ python3 csv-report-processing.py
-
-Processing file: example_input_1.csv
-
-
-Inspect:           
-
-date state name  number of impressions CTR percentage
+#### Turns this:
 
 0   01/21/2019   Mandiana                    883          0.38%
 
@@ -80,18 +73,8 @@ date state name  number of impressions CTR percentage
 
 11  01/24/2019         🐱                    1082          0.68% 
 
-Validating example_input_1.csv file.
 
-Column 1, row 6: state is outside of our states base. Checking all data is sugested.
-
-Column 1, row 10: state is outside of our states base. Checking all data is sugested.
-
-Column 1, row 11: state is outside of our states base. Checking all data is sugested.
-
-File is valid. Starting processing.
-
-
-Inspect:           date country code  impressions  clicks
+#### ...into this:
 
 2   2019-01-21           AF          919       6
 
@@ -116,56 +99,3 @@ Inspect:           date country code  impressions  clicks
 10  2019-01-24          XXX          586       5
 
 11  2019-01-24          XXX         1082       7 
-
-
-File 1 done, saved to OUTPUT_FILES/example_input_1_processed.csv
-
-Processing took: 0.03 seconds.
-
-
-Processing file: example_input_0.csv
-
-
-Inspect:           date state name  number of impressions CTR percentage
-
-0   2343424432        444                    883           0.38
-
-1   01/21/2019       Lola                     76          0.78%
-
-2   01/21/2019     Fāryāb                    919          0.67%
-
-3   01/22/2019       Lola                    201          0.82%
-
-4   01/22/2019     Beroun                    139          0.61%
-
-5   01/22/2019   Mandiana                   1050          0.93%
-
-6   01/23/2019         🐱                     777          0.22%
-
-7   01/23/2019     Gaoual                     72           0.7%
-
-8   01/23/2019       Lola                    521          0.19%
-
-9   01/24/2019     Beroun                    620           0.1%
-
-10  01/24/2019    Unknown                    586          0.86%
-
-11  01/24/2019         🐱                    1082          0.68% 
-
-Validating example_input_0.csv file.
-
-Traceback (most recent call last):
-
-File "csv-report-processing.py", line 274, in <module>
-
-run_csv_report_processing()
-
-File "csv-report-processing.py", line 242, in run_csv_report_processing
-
-validate_CSV(df, csv_file)
-
-File "csv-report-processing.py", line 143, in validate_CSV
-
-assert date[2] == '/' and date[5] == '/', 'Column 0, row %r: date in wrong format ("MM/DD/YYYY" format required). Checking all data is sugested.' % i
-
-AssertionError: Column 0, row 0: date in wrong format ("MM/DD/YYYY" format required). Checking all data is sugested.
